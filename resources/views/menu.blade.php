@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <form action="encuesta" method="post">
-         @csrf_field() 
+        @csrf 
         <div class="row">
             @if($errors->any())
             <div class="alert alert-error">
@@ -15,7 +15,4 @@
             <div id="renderArea" class="w-100"></div>
         </div>  
 </form>
-@endsection
-@section('script')
-    <script src="{{ asset('js/encuesta.js') }}"></script>
 @endsection

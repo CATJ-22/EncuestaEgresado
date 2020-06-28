@@ -19,4 +19,4 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Routte::get('/menu','MenuController@show');
+Route::get('/menu','MenuController@show');
