@@ -2,30 +2,40 @@ body {
     font-family: "Lato", sans-serif;
 }
 
-
+.imglg1{
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    width: 150px;
+    height: 150px;
+}
 
 .main-head{
     height: 150px;
-    background: #FFF;
-   
 }
 
 .sidenav {
     height: 100vh;
     overflow-x: hidden;
+    position: relative;
     padding-top: 200px;
     padding-bottom: 200px;
-    background:#005B28 ;
+    background-image:  url('../imagenes/login.jpg');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-   
 }
 
-
+.imglg{
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    width: 150px;
+    height: 150px;
+}
 .main {
     padding: 0px 10px;
+    color: #005B28;
 }
 
 @media screen and (max-height: 450px) {
@@ -56,7 +66,9 @@ body {
     }
 
     .login-form{
-        margin-top: 80%;
+        margin-top: 55%;
+        margin-right: -30%;
+        margin-left: 30%;
     }
 
     .register-form{
