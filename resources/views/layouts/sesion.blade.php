@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title')</title>
+    <title>@yield('content')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -18,18 +18,18 @@
     <link rel ="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <      
+    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+      
 </head>
 <body>
 <div class="sidenav">
-         <div class="login-main-text">
-            <h2>INICIO DE SESIÓN</h2>
-         </div>
+    <img src="{{asset ('imagenes/login.JPG')}}" alt="utp">
       </div>
       <div class="main">
          <div class="col-md-6 col-sm-12">
             <div class="login-form">
                <form>
+               <h2>INICIO DE SESIÓN</h2>
                   <div class="form-group">
                      <label>Cédula</label>
                      <input type="text" class="form-control" placeholder="Ingrese su cédula">
