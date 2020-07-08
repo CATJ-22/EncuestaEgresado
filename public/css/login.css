@@ -1,3 +1,7 @@
+head{
+    margin-left:90px ;
+}
+
 body {
     font-family: "Lato", sans-serif;
 }
@@ -6,35 +10,33 @@ body {
 
 .main-head{
     height: 150px;
-    background: #FFF;
+
+    background-color:#005B28
    
 }
 
 .sidenav {
     height: 100vh;
     overflow-x: hidden;
-    padding-top: 200px;
-    padding-bottom: 200px;
-    background:#005B28 ;
+    padding-top: 240px;
+    padding-bottom: 300px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
-   
 }
-
 
 .main {
     padding: 0px 10px;
 }
 
-@media screen and (max-height: 450px) {
+@media screen and (max-height: 400px) {
     .sidenav {padding-top: 15px;}
+    
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 400px) {
     .login-form{
-        margin-top: 10%;
+        margin-top: 20%;
     }
 
     .register-form{
@@ -56,22 +58,22 @@ body {
     }
 
     .login-form{
-        margin-top: 80%;
+        margin-top: 20%;
     }
 
     .register-form{
-        margin-top: 20%;
+        margin-top: 50%;
     }
 }
 
 
-.login-main-text{
-    margin-top: 10%;
-    padding: 50px;
-    color: rgb(0, 0, 0);
+.main{
+    margin-top: 15%;
+    padding: 25px;
+    color:#005B28;
 }
 
-.login-main-text h2{
+.main h1{
     font-weight: 300;
 }
 
