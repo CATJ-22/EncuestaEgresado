@@ -27,13 +27,14 @@
       <div class="main">
          <div class="col-md-6 col-sm-12" >
             <div class="login-form">
+            <h1> INICIAR SESIÓN </h1>
                <form>
                   <div class="form-group">
-                     <label>Cédula</label>
+                     <h4>Cédula:</h4>
                      <input type="text" class="form-control" placeholder="Ingrese su cédula">
                   </div>
                   <div class="form-group">
-                     <label>Contraseña</label>
+                     <h4>Contraseña:</h4>
                      <input type="password" class="form-control" placeholder="************">
                   </div>
                   <button type="submit" class="btn btn-black">Acceder</button>
