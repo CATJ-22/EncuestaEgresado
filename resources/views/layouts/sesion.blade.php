@@ -18,6 +18,7 @@
     <link rel ="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <!-- Styles -->
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+
 </head>
 <body style="background: transparent;">
 <img src="{{asset ('imagenes/fisc.png')}}" class="imglg1">
@@ -27,19 +28,19 @@
       <div class="main">
          <div class="col-md-6 col-sm-12" >
             <div class="login-form">
-            <h1> INICIAR SESIÓN </h1>
+            <label> INICIAR SESIÓN </label>
                <form>
                   <div class="form-group">
-                     <h4>Cédula:</h4>
+                     <h3>Cédula:</h3>
                      <input type="text" class="form-control" placeholder="Ingrese su cédula">
                   </div>
                   <div class="form-group">
-                     <h4>Contraseña:</h4>
+                     <h3>Contraseña:</h3>
                      <input type="password" class="form-control" placeholder="************">
                   </div>
-                  <button type="submit" class="btn btn-black">Acceder</button>
+                 <button type="submit" class="btn btn-black"> <h4>Acceder</h4></button>
                </form>
-               <a href="#" id="forgot_pswd">Recuperar Contraseña</a>
+               <h4><a href="#" id="forgot_pswd">¿Desea recuperar su contraseña? </a></h4>
             </div>
          </div>
       </div>

@@ -3,7 +3,8 @@ head{
 }
 
 body {
-    font-family: "Lato", sans-serif;
+    font-family: "Pill Gothic 600mg Semibd", sans-serif;
+    font-size: 50px;
 }
 
 .imglg1{
@@ -96,4 +97,7 @@ body {
 .btn-black{
     background-color:#005B28!important;
     color: #fff;
+    width: 200px;
+    height: 45px;
+
 }
