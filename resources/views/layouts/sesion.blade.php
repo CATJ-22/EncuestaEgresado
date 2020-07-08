@@ -17,17 +17,15 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel ="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
 </head>
-
-<body>
-<div class="sidenav">  
-    <img src="{{asset ('imagenes/login.JPG')}}" alt="utp">
-      </div>
+<body style="background: transparent;">
+<img src="{{asset ('imagenes/fisc.png')}}" class="imglg1">
+<div class="sidenav">
+   <img src="{{asset ('imagenes/utplogo.png')}}" class="imglg">
+</div>
       <div class="main">
-      <h1>INICIO DE SESIÓN</h1>
-         <div class="col-md-6 col-sm-12">
+         <div class="col-md-6 col-sm-12" >
             <div class="login-form">
                <form>
                   <div class="form-group">
@@ -44,6 +42,7 @@
             </div>
          </div>
       </div>
+
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
 </body>
 </html>
