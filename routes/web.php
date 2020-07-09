@@ -17,10 +17,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//MENU DE LA SECRETARIA DE LA VICEDENA DE ADMINSITRACION
 Auth::routes();
+
+Route::get('/menusecretaria','MenuASController@show');
+
+//MENU EGRESADO
 
 Route::get('/menu','MenuController@show');
 
-Auth::routes();
+//LOGIN
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
