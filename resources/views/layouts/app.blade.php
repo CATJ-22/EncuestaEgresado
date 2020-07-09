@@ -17,18 +17,15 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel ="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <      
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">     
 </head>
 <!-- UTP HEADER -->
-<header>
-<img src="{{asset ('imagenes/headerutp.jpg')}}" class="utpheader" style="vertical-align:middle;">
+<header style="background-image: url(../imagenes/headerutp.jpg); background-repeat: no-repeat; background-size: cover; padding: 8.3%; ">
 </header>
 <nav class="navbar navbar-light" style="background-color:#005B28;">
   <!-- Navbar content -->
   <a class="navbar-brand" style="color: #fff" href="#"> SECRETARIA DE LA VICEDECANA ACADEMICA </a>
 </nav>
-
 <body>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
 </body>
