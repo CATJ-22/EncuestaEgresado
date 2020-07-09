@@ -25,6 +25,7 @@ Route::get('/menusecretaria','MenuASController@show');
 //MENU EGRESADO
 
 Route::get('/menu','MenuController@show');
+Route::get('/menueg','MenuEGController@show');
 
 //LOGIN
 

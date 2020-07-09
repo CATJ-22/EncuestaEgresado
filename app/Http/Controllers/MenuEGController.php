@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class MenuController extends Controller
+class MenuEGController extends Controller
 {
     public function show(){
-        return view('menu');
+        return view('menuEG');
     }
         
 }
