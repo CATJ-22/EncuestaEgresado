@@ -16,7 +16,6 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel ="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">     
 </head>
@@ -32,9 +31,12 @@
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="#"><i class="fas fa-home"></i>INICIO</a>
+    <img src="../icons/home.svg" alt="home SVG">
+      <a class="nav-item nav-link" href="#">INICIO</a>
+      <img src="../icons/file.svg" alt="file SVG">
       <a class="nav-item nav-link" href="#">ENCUESTAS</a>
-      <a class="nav-item nav-link" href="#">GENERAR</a>
+      <img src="../icons/book-open.svg" alt="book SVG">
+      <a class="nav-item nav-link" href="#" style="position:right;">GENERAR REPORTES</a>
     </div>
   </div>
 </nav>
