@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/menu','MenuController@show');
+Route::get('/menueg','MenuEGController@show');
 
 Auth::routes();
 
