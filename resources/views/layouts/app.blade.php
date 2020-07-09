@@ -22,9 +22,20 @@
 <!-- UTP HEADER -->
 <header style="background-image: url(../imagenes/headerutp.jpg); background-repeat: no-repeat; background-size: cover; padding: 8.3%; ">
 </header>
+<!--NAV NAME -->
 <nav class="navbar navbar-light" style="background-color:#005B28;">
   <!-- Navbar content -->
   <a class="navbar-brand" style="color: #fff" href="#"> SECRETARIA DE LA VICEDECANA ACADEMICA </a>
+</nav>
+   <!-- NAV PRINCIPAL -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="#">INICIO</a>
+      <a class="nav-item nav-link" href="#">ENCUESTAS</a>
+      <a class="nav-item nav-link" href="#">GENERAR</a>
+    </div>
+  </div>
 </nav>
 <body>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
