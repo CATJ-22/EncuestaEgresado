@@ -18,17 +18,27 @@
     <link rel ="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <      
+
 </head>
 <!-- UTP HEADER -->
 <header>
 <img src="{{asset ('imagenes/headerutp.jpg')}}" class="utpheader" style="vertical-align:middle;">
 </header>
+<!--NAV NAME -->
 <nav class="navbar navbar-light" style="background-color:#005B28;">
   <!-- Navbar content -->
   <a class="navbar-brand" style="color: #fff" href="#"> SECRETARIA DE LA VICEDECANA ACADEMICA </a>
 </nav>
-
+   <!-- NAV PRINCIPAL -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="#">INICIO</a>
+      <a class="nav-item nav-link" href="#">ENCUESTAS</a>
+      <a class="nav-item nav-link" href="#">GENERAR</a>
+    </div>
+  </div>
+</nav>
 <body>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
 </body>
