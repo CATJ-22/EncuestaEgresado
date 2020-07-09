@@ -18,12 +18,10 @@
     <link rel ="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">     
 </head>
 <!-- UTP HEADER -->
-<header>
-<img src="{{asset ('imagenes/headerutp.jpg')}}" class="utpheader" style="vertical-align:middle;">
+<header style="background-image: url(../imagenes/headerutp.jpg); background-repeat: no-repeat; background-size: cover; padding: 8.3%; ">
 </header>
 <!--NAV NAME -->
 <nav class="navbar navbar-light" style="background-color:#005B28;">
