@@ -17,6 +17,14 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel ="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <!-- Styles -->
+    <style>
+    .anav{
+    color: black;
+    font-family: "Pill Gothic 600mg Semibd", sans-serif;
+    }
+
+    </style>
+    
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">     
 </head>
 <!-- UTP HEADER -->
@@ -28,18 +36,23 @@
   <a class="navbar-brand" style="color: #fff" href="#"> SECRETARIA DE LA VICEDECANA ACADEMICA </a>
 </nav>
    <!-- NAV PRINCIPAL -->
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-    <img src="../icons/home.svg" alt="home SVG">
-      <a class="nav-item nav-link" href="#">INICIO</a>
-      <img src="../icons/file.svg" alt="file SVG">
-      <a class="nav-item nav-link" href="#">ENCUESTAS</a>
-      <img src="../icons/book-open.svg" alt="book SVG">
-      <a class="nav-item nav-link" href="#" style="position:right;">GENERAR REPORTES</a>
-    </div>
-  </div>
+
+<nav class="navbar navbar-expand-sm justify-content-center navbar-light sticky-top" style="font-family: Pill Gothic 600mg Semibd; sans-serif; background-color:  rgba(80, 78, 78, 0.233);">
+  <ul class="navbar-nav">
+    <li class="nav-item" >
+      <a class="navbar-link anav" href="#inicio" ><img src="../icons/home.svg" alt="home SVG" >  INICIO</a>
+    </li>
+    <div Style="width: 50px;"></div>
+    <li class="nav-item" >
+      <a class="navbar-link anav" href="#encuesta" ><img src="../icons/file.svg" alt="file SVG"> ENCUESTAS</a>
+    </li>
+    <div style="width: 50px;"></div>
+    <li class="nav-item" >
+      <a class="navbar-link anav" href="#reportes"><img src="../icons/book-open.svg" alt="book SVG">   GENERAR REPORTES</a>
+    </li>
+  </ul>
 </nav>
+
 <body>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
 </body>
