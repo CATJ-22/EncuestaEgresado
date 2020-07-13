@@ -44,7 +44,7 @@
     </li>
     <div Style="width: 50px;"></div>
     <li class="nav-item" >
-      <a class="navbar-link anav" href="#encuesta" ><img src="../icons/file.svg" alt="file SVG"> ENCUESTAS</a>
+      <a class="navbar-link anav" href="encuesta" ><img src="../icons/file.svg" alt="file SVG"> ENCUESTAS</a>
     </li>
     <div style="width: 50px;"></div>
     <li class="nav-item" >
