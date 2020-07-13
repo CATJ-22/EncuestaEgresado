@@ -26,6 +26,7 @@ Route::get('/menusecretaria','MenuASController@show');
 
 Route::get('/menu','MenuController@show');
 Route::get('/menueg','MenuEGController@show');
+Route::get('/encuestaeg','EncuestaEGController@show');
 
 //LOGIN
 
