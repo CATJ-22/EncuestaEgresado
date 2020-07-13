@@ -21,7 +21,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/menusecretaria','MenuASController@show');
-
+Route::get('/encuesta','EncuestaController@show');
+Route::get('/modifpreg','ModifpregController@show');
 //MENU EGRESADO
 
 Route::get('/menu','MenuController@show');

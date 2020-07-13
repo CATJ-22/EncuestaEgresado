@@ -40,11 +40,11 @@
 <nav class="navbar navbar-expand-sm justify-content-center navbar-light sticky-top" style="font-family: Pill Gothic 600mg Semibd; sans-serif; background-color:  rgba(80, 78, 78, 0.233);">
   <ul class="navbar-nav">
     <li class="nav-item" >
-      <a class="navbar-link anav" href="#inicio" ><img src="../icons/home.svg" alt="home SVG" >  INICIO</a>
+      <a class="navbar-link anav" href="menusecretaria" ><img src="../icons/home.svg" alt="home SVG" >  INICIO</a>
     </li>
     <div Style="width: 50px;"></div>
     <li class="nav-item" >
-      <a class="navbar-link anav" href="#encuesta" ><img src="../icons/file.svg" alt="file SVG"> ENCUESTAS</a>
+      <a class="navbar-link anav" href="encuesta" ><img src="../icons/file.svg" alt="file SVG"> ENCUESTAS</a>
     </li>
     <div style="width: 50px;"></div>
     <li class="nav-item" >
