@@ -11,10 +11,9 @@ class ModifpregController extends Controller
         return view('modifpreg');
     }
 
-    public function modificar(){
-        $preguntas = ModPregduntas::table('pregunta')
-                        ->where('id_pregunta>9');
-
+    public function GetPreguntas(){
+        $preguntas = ModPreguntas::where('id_pregunta','>',9)->get();
+                
         $forDtt['data']=$preguntas;
 
         return response()->json($forDtt);

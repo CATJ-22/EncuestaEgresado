@@ -42,10 +42,10 @@
     $(document).ready( function () {
         $('#dtpreguntas').DataTable({
             ajax:{
-                url: 'modifpreg2',
+                url: 'allpreg',
                 method: "GET"
             },
-            colums:[
+            columns:[
                 {data: 'id_pregunta'},
                 {data: 'descrip_preg'},
                 {},
