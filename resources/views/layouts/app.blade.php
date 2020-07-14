@@ -52,7 +52,7 @@
     </li>
   </ul>
 </nav>
-
+@yield('content')
 <body>
 <div class="container-fluid">
     <div class="row">
