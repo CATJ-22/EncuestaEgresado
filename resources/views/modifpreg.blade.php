@@ -21,17 +21,7 @@
                       <th Style="width: 120px; text-align: center;">ACCION</th>
                   </thead>
                   <tbody>
-                      @foreach($preguntas as $pregunta)
-                      <tr>
-                          <td>{{ $pregunta -> id_pregunta }}</td>
-                          <td>{{ $pregunta -> descrip_preg }}</td>
-                          <td Style="text-align: center;">
-                                 <a class="btn btn-success" href="#">M</a>
-                                 <button type="button" class="btn btn-danger">D</button>
-                          </td>
-                              
-                      </tr>
-                      @endforeach
+
                   </tbody>
               </table>
           </div>
@@ -50,7 +40,21 @@
 <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" ></script>
 <script> 
     $(document).ready( function () {
-        $('#dtpreguntas').DataTable();
+        $('#dtpreguntas').DataTable({
+            ajax:{
+                url: 'modifpreg2',
+                method: "GET"
+            },
+            colums:[
+                {data: 'id_pregunta'},
+                {data: 'descrip_preg'},
+                {},
+            ]
+        });
     } );
 </script>
 @endsection
+<!--
+<a class="btn btn-success" href="#">M</a>
+<button type="button" class="btn btn-danger">D</button>
+-->

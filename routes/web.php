@@ -22,7 +22,8 @@ Auth::routes();
 
 Route::get('/menusecretaria','MenuASController@show');
 Route::get('/encuesta','EncuestaController@show');
-Route::get('/modifpreg','ModifpregController@modificar');
+Route::get('/modifpreg','ModifpregController@show');
+Route::get('/modifpreg2','ModifpregController@modificar');
 //MENU EGRESADO
 
 Route::get('/menu','MenuController@show');

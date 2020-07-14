@@ -12,11 +12,12 @@ class ModifpregController extends Controller
     }
 
     public function modificar(){
-        $preguntas = ModPreguntas::all();
+        $preguntas = ModPregduntas::table('pregunta')
+                        ->where('id_pregunta>9');
 
-        return view('modifpreg',[
-        'preguntas' => $preguntas
-        ]);
+        $forDtt['data']=$preguntas;
+
+        return response()->json($forDtt);
     }
 
 
