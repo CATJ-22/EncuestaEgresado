@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    @yield('scripts')
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -22,9 +22,8 @@
     color: black;
     font-family: "Pill Gothic 600mg Semibd", sans-serif;
     }
-
     </style>
-    
+    @yield('styles')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">     
 </head>
 <!-- UTP HEADER -->
@@ -37,7 +36,7 @@
 </nav>
    <!-- NAV PRINCIPAL -->
 
-<nav class="navbar navbar-expand-sm justify-content-center navbar-light sticky-top" style="font-family: Pill Gothic 600mg Semibd; sans-serif; background-color:  rgba(80, 78, 78, 0.233);">
+<nav class="navbar navbar-expand-sm justify-content-center navbar-light" style="font-family: Pill Gothic 600mg Semibd; sans-serif; background-color:  rgba(80, 78, 78, 0.233);">
   <ul class="navbar-nav">
     <li class="nav-item" >
       <a class="navbar-link anav" href="/modulos" ><img src="../icons/home.svg" alt="home SVG" >  INICIO</a>
@@ -63,4 +62,5 @@
         </div>
       </div>
 </body>
+
 </html>
