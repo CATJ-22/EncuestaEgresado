@@ -23,6 +23,7 @@ Auth::routes();
 Route::get('/menusecretaria','MenuASController@show');
 Route::get('/encuesta','EncuestaController@show');
 Route::get('/modifpreg','ModifpregController@show');
+Route::get('/estadoencues','EstadoencuesController@show');
 Route::get('allpreg','ModifpregController@GetPreguntas');
 //MENU EGRESADO
 
