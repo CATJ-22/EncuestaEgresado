@@ -6,7 +6,6 @@
 
 @section('content')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
 <body>
 <div class="row justify-content-center"> 
   <div class="col=md=8">
@@ -21,13 +20,6 @@
                       <th>Estado</th>
                   </thead>
                   <tbody>
-                    @foreach ($correos as $correo)
-                        <tr>                        
-                            <td>{{$correo->id_egresado}} </td>
-                            <td>{{$correo->correo}} </td>
-                            <td>{{$correo->Estado}} </td>
-                        </tr>  
-                    @endforeach
                   </tbody>
               </table>
           </div>
@@ -46,7 +38,30 @@
 <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" ></script>
 <script> 
     $(document).ready( function () {
-        $('#dtpreguntas').DataTable({ });
+        $('#dtpreguntas').DataTable({ 
+            ajax:{
+                url: 'allest',
+                method: "GET"
+            },
+            columns:[
+                {data: 'id_egresado'},
+                {data: 'correo'},
+                {data: 'Estado'},
+            ],
+            //Funcion para colorear la celda dependiendo del estado
+            rowCallback:function(nRow, aData, iDisplayIndex, iDisplayIndexFull){
+                if(aData.Estado == "Respondida"){
+                    $($(nRow).find("td")[2]).css("background-color","#3D9606");
+                    $($(nRow).find("td")[2]).css('color', '#FFF');
+                    $($(nRow).find("td")[2]).css('text-align', 'center');
+                }else{
+                    $($(nRow).find("td")[2]).css("background-color","#AF081C");
+                    $($(nRow).find("td")[2]).css('color', '#FFF');
+                    $($(nRow).find("td")[2]).css('text-align', 'center');
+                }
+
+            }
+        });
     } );
 </script>
 @endsection
