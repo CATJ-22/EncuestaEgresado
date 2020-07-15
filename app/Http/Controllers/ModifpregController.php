@@ -10,7 +10,7 @@ class ModifpregController extends Controller
     public function show(){
         return view('modifpreg');
     }
-
+    /* Metodo para comsultar las preguntas editables */
     public function GetPreguntas(){
         $preguntas = ModPreguntas::where('id_pregunta','>',9)->get();
                 
