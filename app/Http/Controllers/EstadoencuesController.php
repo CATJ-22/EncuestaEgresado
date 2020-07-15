@@ -15,6 +15,5 @@ class EstadoencuesController extends Controller
         $preguntas = ModEstadoencues::all();
     }
 
-
         
 }
