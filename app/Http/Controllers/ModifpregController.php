@@ -12,7 +12,7 @@ class ModifpregController extends Controller
     }
     /* Metodo para comsultar las preguntas editables */
     public function GetPreguntas(){
-        $preguntas = ModPreguntas::where('id_pregunta','>',9)->get();
+        $preguntas = ModPreguntas::where('id_pregunta','>',9)->WHERE('id_encuesta','=',3)->get();
                 
         $forDtt['data']=$preguntas;
 
