@@ -6,10 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class ModEstadoencues extends Model
 {
-    protected $table = '#nombredetabla';
-    protected $primaryKey ='#primary';
+    protected $table = 'egresado';
+    protected $primaryKey ='id_egresado';
 
     protected $fillable = [
-        '#colmn1','#colmn2','#colmn3','#colmn4'
-    ];
+        'correo'];
 }

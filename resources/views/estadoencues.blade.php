@@ -16,12 +16,15 @@
           <div class="container">
               <table class="table" id="dtpreguntas">
                   <thead>
-                      <th>ID</th>
-                      <th>PREGUNTA</th>
-                      <th Style="width: 120px; text-align: center;">ACCION</th>
+                      <th>Correo Electronico</th>
+                      <th>Estado</th>
                   </thead>
                   <tbody>
-
+                    @foreach ($correos as $correo)
+                        <tr>
+                            <td>{{$correo->correo}} </td>
+                        </tr>
+                    @endforeach
                   </tbody>
               </table>
           </div>
