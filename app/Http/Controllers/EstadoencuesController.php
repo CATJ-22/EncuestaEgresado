@@ -8,7 +8,7 @@ use App\Models\ModEstadoencues;
 class EstadoencuesController extends Controller
 {
     public function show(){
-        return view('estadoencuesta');
+        return view('estadoencues');
     }
     /* Metodo para comsultar las preguntas editables */
     public function GetPreguntas(){

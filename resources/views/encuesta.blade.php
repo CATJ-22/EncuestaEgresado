@@ -1,13 +1,10 @@
 @extends('layouts.app')
 
-
-@section('content')
-    <!--Diseño del Boton-->
-    <style>
+@section('styles')
+     <!--Diseño del Boton-->
+     <style>
         .abtn{
-            position: absolute;
-            top: 70%;
-            left: 60%;
+        
             transform: translate(-50%, -50%);
             color: #005B28;
             background-color: white;
@@ -24,9 +21,20 @@
             background-color: rgba(189, 189, 189, 0.76);
         }
     </style>
+@endsection
+
+@section('content')
+   
     <!--Boton de Modificar y eliminar-->
-    <div class="row justify-content-center">
-        <a class="abtn" id="startBtn" href="modifpreg" role="button">Modificar o eliminar Preguntas</a>
+    <div class="container">
+        <div class="row justify-content-center">
+            <a class="abtn" id="startBtn" href="modifpreg" role="button" style="position: absolute;
+            top: 70%; left: 60%;">Modificar o eliminar Preguntas</a>
+        </div>
+        <div class="row justify-content-center">
+            <a class="abtn" id="startBtn" href="estadoencues" role="button" style="position: absolute;
+            top: 80%; left: 60%;">Estado de Encuesta</a>
+        </div>
     </div>
 @endsection
     
