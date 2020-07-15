@@ -11,19 +11,22 @@
 <div class="row justify-content-center"> 
   <div class="col=md=8">
       <div class="card">
-          <div class="card-header">Preguntas Existentes</div>
+          <div class="card-header">Estado de Encuesta</div>
 
           <div class="container">
               <table class="table" id="dtpreguntas">
                   <thead>
-                      <th>Correo Electronico</th>
+                    <th>ID</th>  
+                    <th>Correo Electronico</th>
                       <th>Estado</th>
                   </thead>
                   <tbody>
                     @foreach ($correos as $correo)
-                        <tr>
+                        <tr>                        
+                            <td>{{$correo->id_egresado}} </td>
                             <td>{{$correo->correo}} </td>
-                        </tr>
+                            <td>{{$correo->Estado}} </td>
+                        </tr>  
                     @endforeach
                   </tbody>
               </table>
