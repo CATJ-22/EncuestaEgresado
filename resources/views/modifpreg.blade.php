@@ -47,13 +47,12 @@
             columns:[
                 {data: 'id_pregunta'},
                 {data: 'descrip_preg'},
-                {},
+                {data: 'id_pregunta',
+                render: function(data, t, r, meta) {
+                        return "<a class='btn btn-success' href='/editarpreg'><img src='../icons/papel.svg' style='color: #fff; width: 30px; height: 30px;' alt='Modificar'></a> <button type='button' class='btn btn-danger'><img src='../icons/limpiar.svg' style='color: #fff; width: 30px; height: 30px;' alt='Eliminar'></button>";
+                }},
             ]
         });
     } );
 </script>
 @endsection
-<!--
-<a class="btn btn-success" href="#">M</a>
-<button type="button" class="btn btn-danger">D</button>
--->
