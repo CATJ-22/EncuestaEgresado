@@ -22,10 +22,12 @@ Auth::routes();
 
 Route::get('/menusecretaria','MenuASController@show');
 Route::get('/encuesta','EncuestaController@show');
+Route::get('/agregarpreg', 'AgregarpregController@show');
 Route::get('/modifpreg','ModifpregController@show');
 Route::get('/estadoencues','EstadoencuesController@show');
 Route::get('allpreg','ModifpregController@GetPreguntas');
 Route::get('allest','EstadoencuesController@GetEstados');
+
 //MENU EGRESADO
 
 Route::get('/menu','MenuController@show');

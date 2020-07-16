@@ -28,12 +28,16 @@
     <!--Boton de Modificar y eliminar-->
     <div class="container">
         <div class="row justify-content-center">
+            <a class="abtn" id="startBtn" href="agregarpreg" role="button" style="position: absolute;
+            top: 70%; left: 60%;">Agregar Pregunta</a>
+        </div>
+        <div class="row justify-content-center">
             <a class="abtn" id="startBtn" href="modifpreg" role="button" style="position: absolute;
-            top: 70%; left: 60%;">Modificar o eliminar Preguntas</a>
+            top: 80%; left: 60%;">Modificar o eliminar Preguntas</a>
         </div>
         <div class="row justify-content-center">
             <a class="abtn" id="startBtn" href="estadoencues" role="button" style="position: absolute;
-            top: 80%; left: 60%;">Estado de Encuesta</a>
+            top: 90%; left: 60%;">Estado de Encuesta</a>
         </div>
     </div>
 @endsection
