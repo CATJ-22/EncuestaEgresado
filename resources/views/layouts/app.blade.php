@@ -18,16 +18,15 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel ="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">    
     <style>
     .anav{
     color: black;
     font-family: "Pill Gothic 600mg Semibd", sans-serif;
     }
-    
-
     </style>
     @yield('styles')
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">     
+     
 </head>
 <!-- UTP HEADER -->
 <header style="background-image: url(../imagenes/headerutp.jpg); background-repeat: no-repeat; background-size: cover; padding: 8.3%; ">

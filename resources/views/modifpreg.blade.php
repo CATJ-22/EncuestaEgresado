@@ -17,7 +17,7 @@
                   <thead>
                       <th>ID</th>
                       <th>PREGUNTA</th>
-                      <th Style="width: 120px; text-align: center;">ACCION</th>
+                      <th Style="width: 120px; text-align: center;" >ACCION</th>
                   </thead>
                   <tbody>
 
@@ -49,10 +49,25 @@
                 {data: 'descrip_preg'},
                 {data: 'id_pregunta',
                 render: function(data, t, r, meta) {
-                        return "<a class='btn btn-success' href='/editarpreg'><img src='../icons/papel.svg' style='color: #fff; width: 30px; height: 30px;' alt='Modificar'></a> <button type='button' class='btn btn-danger'><img src='../icons/limpiar.svg' style='color: #fff; width: 30px; height: 30px;' alt='Eliminar'></button>";
+                        return "<a class='btn btn-success' href='/editarpreg'><img src='../icons/papel.svg' style='color: #fff; width: 30px; height: 30px;' alt='Modificar'></a> <button type='button' onClick='return Confirm()' class='btn btn-danger'><img src='../icons/limpiar.svg' style='color: #fff; width: 30px; height: 30px;' alt='Eliminar'></button>";
                 }},
             ]
         });
     } );
 </script>
+<script>
+	function Confirm()
+    {
+    	var respuesta = confirm("Are you sure?");
+        if(respuesta == true)
+        {
+        	return true;
+        }
+        else
+        {
+        	return false;
+        }
+    }
+</script>
+
 @endsection
