@@ -12,6 +12,7 @@
     <!-- Scripts -->
     <script url="js/app.js" defer></script>
     @yield('scripts')
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -22,6 +23,8 @@
     color: black;
     font-family: "Pill Gothic 600mg Semibd", sans-serif;
     }
+    
+
     </style>
     @yield('styles')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">     
@@ -51,16 +54,11 @@
     </li>
   </ul>
 </nav>
-@yield('content')
+
 <body>
-<div class="container-fluid">
-    <div class="row">
-      <div class="col-4">
-        <div class="d-flex flex-column mb-4 justify-content-center">
-            <img src="imagenes/IMGWEB1.jpg" alt="" width="350">
-            <img src="imagenes/IMGWEB.jpg" alt="" width="350" class="mt-2">
-        </div>
-      </div>
+<br>
+@yield('content')
+
 </body>
 
 </html>

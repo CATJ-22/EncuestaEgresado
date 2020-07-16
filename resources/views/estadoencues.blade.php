@@ -2,31 +2,41 @@
 
 @section('styles')
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
 @endsection
 
 @section('content')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
-<body>
-<div class="row justify-content-center"> 
-  <div class="col=md=8">
-      <div class="card">
-          <div class="card-header">Estado de Encuesta</div>
+  <div class="container">
+    <div class="row" >
+        <div class="col" style="display: flex; align-items: center; ">
+         <img src="imagenes/imgpub1.jpg" alt="">
+        </div>
+        <!--Data Table-->
+        <div class="col">
+        <div class="row justify-content-center"> 
+                <div class="col=md=8">
+                    <div class="card">
+                        <div class="card-header">Estado de Encuesta</div>
 
-          <div class="container">
-              <table class="table" id="dtpreguntas">
-                  <thead>
-                    <th>ID</th>  
-                    <th>Correo Electronico</th>
-                      <th>Estado</th>
-                  </thead>
-                  <tbody>
-                  </tbody>
-              </table>
-          </div>
-      </div>
+                        <div class="container">
+                            <table class="table" id="dtpreguntas">
+                                <thead>
+                                    <th>ID</th>  
+                                    <th>Correo Electronico</th>
+                                    <th>Estado</th>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
   </div>
-</div>
-</body>
+
+
 
 @endsection
 
