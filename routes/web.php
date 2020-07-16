@@ -25,9 +25,12 @@ Route::get('/encuesta','EncuestaController@show');
 Route::get('/agregarpreg', 'AgregarpregController@show');
 Route::get('/modifpreg','ModifpregController@show');
 Route::get('/estadoencues','EstadoencuesController@show');
-Route::get('allpreg','ModifpregController@GetPreguntas');
 Route::get('allest','EstadoencuesController@GetEstados');
 
+//vicedecana
+Route::get('/modifpreg','ModifpregController@show');
+Route::get('allpreg','ModifpregController@GetPreguntas');
+Route::get('/editarpreg','EditarpregController@show');
 //MENU EGRESADO
 
 Route::get('/menu','MenuController@show');
