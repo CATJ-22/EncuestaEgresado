@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
 <div class="row">
     <div class="col-12 pt-4">
         <h1 class="h1">Editando Pregunta</h1>
@@ -115,10 +116,11 @@
     </div>
 
     <div class="form-group d-flex justify-content-between mt-5 mb-5">
-        <a href="/menu/emp/mantenimiento" class="btn btn-success">Cancelar</a>
+        <a href="/modifpreg" class="btn btn-success">Cancelar</a>
         <button type="submit" class="btn btn-success">Guardar</button>
     </div>
 </form>
+</div>
 @endsection
 
 @section('scripts')

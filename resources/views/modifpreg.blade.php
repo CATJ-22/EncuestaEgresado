@@ -60,7 +60,7 @@ function format ( d) {
                 
     return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
                 '<tr>'+
-                '<td>'+'<p>'+d.descrip_opcion+'</p>'+'<td>'+
+                '<td>'+'<p>Tipo de Pregunta:'+a1+'</p>'+'<td>'+
                 '</tr>'+
             '</table>';
     
