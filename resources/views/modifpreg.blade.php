@@ -48,9 +48,8 @@
 <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" ></script>
 
 <script type="text/javascript"> 
-function format ( d ) {
+function format ( d) {
    var a1="";
-
                 if (d.tipo_preg === "A") {
                     a1="Abierta";
                 } else if (d.tipo_preg === "CR"){
@@ -58,10 +57,10 @@ function format ( d ) {
                 } else{
                     a1="Seleccion Multiple";
                 }   
-
+                
     return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
                 '<tr>'+
-                '<td>'+'<p>'+a1+'</p>'+'<td>'+
+                '<td>'+'<p>'+d.descrip_opcion+'</p>'+'<td>'+
                 '</tr>'+
             '</table>';
     
