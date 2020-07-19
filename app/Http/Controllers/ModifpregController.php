@@ -10,7 +10,8 @@ class ModifpregController extends Controller
 {
     public function show(){
         $opciones = ModOpciones::get()->all();
-        return view('modifpreg',[
+        $args = ModPreguntas::WHERE('id_encuesta','=',3)->get();
+        return view('modifpreg',[ 'args'=> $args,
         'opciones'=> $opciones]);
     }
     /* Metodo para comsultar las preguntas editables */

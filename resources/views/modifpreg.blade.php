@@ -49,28 +49,20 @@
 
 <script type="text/javascript"> 
 function format ( d ) {
+   var a1="";
+
+                if (d.tipo_preg === "A") {
+                    a1="Abierta";
+                } else if (d.tipo_preg === "CR"){
+                    a1="Cerrada"; 
+                } else{
+                    a1="Seleccion Multiple";
+                }   
+
     return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
-                '@if('+string(d.tipo_preg)+'== "A")'+
-                        '<tr>'+
-                            '<input disable type="text" class="form-control">'+
-                        '</tr>'+
-                '@elseif('+string(d.tipo_preg)+' == "CR")'+
-                '@foreach($opciones as $key => $opcion)'+
-                '@if('+d.id_pregunta+' == $opcion->id_pregunta)'+
-                        '<tr>'+
-                            '<td>{{$opcion->descrip_opcion}}</td>'+
-                        '</tr>'+
-                '@endif'+
-                '@endforeach'+
-                '@else'+
-                '@foreach($opciones as $key => $opcion)'+
-                '@if('+d.id_pregunta+' == $opcion->id_pregunta)'+
-                        '<tr>'+
-                            '<td>{{$opcion->descrip_opcion}}</td>'+
-                        '</tr>'+
-                '@endif'+
-                '@endforeach'+
-                '@endif'+
+                '<tr>'+
+                '<td>'+'<p>'+a1+'</p>'+'<td>'+
+                '</tr>'+
             '</table>';
     
 }
