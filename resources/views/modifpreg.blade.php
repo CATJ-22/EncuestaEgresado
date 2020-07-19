@@ -46,12 +46,41 @@
   integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
   crossorigin="anonymous"></script>
 <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" ></script>
-<script> 
 
+<script type="text/javascript"> 
 function format ( d ) {
-    return 'The child row can contain any data you wish, including links, images, inner tables etc.';
+    return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
+                '@if('+string(d.tipo_preg)+'== "A")'+
+                        '<tr>'+
+                            '<input disable type="text" class="form-control">'+
+                        '</tr>'+
+                '@elseif('+string(d.tipo_preg)+' == "CR")'+
+                '@foreach($opciones as $key => $opcion)'+
+                '@if('+d.id_pregunta+' == $opcion->id_pregunta)'+
+                        '<tr>'+
+                            '<td>{{$opcion->descrip_opcion}}</td>'+
+                        '</tr>'+
+                '@endif'+
+                '@endforeach'+
+                '@else'+
+                '@foreach($opciones as $key => $opcion)'+
+                '@if('+d.id_pregunta+' == $opcion->id_pregunta)'+
+                        '<tr>'+
+                            '<td>{{$opcion->descrip_opcion}}</td>'+
+                        '</tr>'+
+                '@endif'+
+                '@endforeach'+
+                '@endif'+
+            '</table>';
+    
 }
 
+
+
+
+</script>
+
+<script>
     $(document).ready( function () {
         var dt = $('#dtpreguntas').DataTable({
             ajax:{
@@ -69,7 +98,7 @@ function format ( d ) {
                 },
                 {data: 'id_pregunta',
                 render: function(data, t, r, meta) {
-                        return "<a class='btn btn-success' href='/editarpreg'><img src='../icons/papel.svg' style='color: #fff; width: 30px; height: 30px;' alt='Modificar'></a> <button type='button' onClick='return Confirm()' class='btn btn-danger'><img src='../icons/limpiar.svg' style='color: #fff; width: 30px; height: 30px;' alt='Eliminar'></button>";
+                        return "<a class='btn btn-success' href='/editarpreg/"+data+"'><img src='../icons/papel.svg' style='color: #fff; width: 30px; height: 30px;' alt='Modificar'></a> <button type='button' onClick='return Confirm()' class='btn btn-danger'><img src='../icons/limpiar.svg' style='color: #fff; width: 30px; height: 30px;' alt='Eliminar'></button>";
                 }},
             ],
             language:{
@@ -100,7 +129,7 @@ function format ( d ) {
         var tr = $(this).closest('tr');
         var row = dt.row( tr );
         var idx = $.inArray( tr.attr('id'), detailRows );
-
+        
         if ( row.child.isShown() ) {
             tr.removeClass( 'details' );
             row.child.hide();
@@ -127,10 +156,6 @@ function format ( d ) {
     } );    
 
     } );
-</script>
-
-<script>
-   
 </script>
 
 @endsection

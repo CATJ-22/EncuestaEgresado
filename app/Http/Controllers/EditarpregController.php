@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\ModOpciones;
 use Illuminate\Http\Request;
 
 class EditarpregController extends Controller
 {
     public function show(){
-        return view('editarpreg');
+        $opciones = ModOpciones::get();
+    return view('editarpreg', array('preguntas'=> $opciones));
     }
         
 }

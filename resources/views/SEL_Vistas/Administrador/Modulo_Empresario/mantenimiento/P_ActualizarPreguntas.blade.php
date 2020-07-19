@@ -1,12 +1,12 @@
-@extends('P_PantallaBase')
+@extends('layaout.app')
 
-@section('secciones')
+@section('content')
 <div class="row">
     <div class="col-12 pt-4">
         <h1 class="h1">Editando Pregunta</h1>
     </div>
 </div>
-<form action="/menu/emp/mantenimiento/{{$pregunta->id_pregunta}}" method="POST">
+<form action="/editarpreg/{{$preguntas->id_pregunta}}" method="POST">
     @csrf
     @method('PATCH')
     @if ($errors->any())
@@ -19,31 +19,25 @@
     <div class="form-group">
         <label for="id_encuesta" class="form">Encuesta:</label>
         <select class="form-control" name="id_encuesta" id="id_encuesta" disabled="disabled">
-            <option value="4" selected>Encuesta Empresario</option>
+            <option value="3" selected>Encuesta Empresario</option>
         </select>
-        <input type="hidden" name="id_encuesta" value="4" />
+        <input type="hidden" name="id_encuesta" value="3" />
     </div>
 
     <div class="form-group">
         <label for="id_seccion" class="form">Seccion:</label>
         <select class="form-control" name="id_seccion" id="id_seccion">
-            @if ($pregunta->id_seccion == 9)
-            <option value="9" selected>Sección A: Datos Generales de la empresa</option>
-            <option value="10">Sección B: Perfil Profesional</option>
-            <option value="11">Sección C: Datos generales de la persona que llena la encuesta</option>
-            @elseif ($pregunta->id_seccion == 10)
-            <option value="9" >Sección A: Datos Generales de la empresa</option>
-            <option value="10" selected>Sección B: Perfil Profesional</option>
-            <option value="11">Sección C: Datos generales de la persona que llena la encuesta</option>
+            @if ($preguntas->id_seccion ==7)
+            <option value="7" selected>Sección A: Generales Demográficos</option>
+            <option value="8">Sección B: Generales de Contacto</option>
             @else
-            <option value="9">Sección A: Datos Generales de la empresa</option>
-            <option value="10">Sección B: Perfil Profesional</option>
-            <option value="11"selected>Sección C: Datos generales de la persona que llena la encuesta</option>
+            <option value="7" >Sección A: Generales Demográficos</option>
+            <option value="8" selected>Sección B: Generales de Contacto</option>
             @endif
         </select>
     </div>
 
-    @if($pregunta->tipo_preg == 'A')
+    @if($preguntas->tipo_preg == 'A')
     <div class="form-group">
         <label for="tipo_preg" class="form">Tipo de Pregunta</label>
         <select class="form-control" name="tipo_preg" id="tipo_preg" onchange="tipoPreg()">
@@ -52,7 +46,7 @@
             <option value="CC">Respuestas Multiples</option>
         </select>
     </div>
-    @elseif ($pregunta->tipo_preg=='CR')
+    @elseif ($preguntas->tipo_preg=='CR')
     <div class="form-group">
         <label for="tipo_preg" class="form">Tipo de Pregunta</label>
         <select class="form-control" name="tipo_preg" id="tipo_preg" onchange="tipoPreg()">
@@ -61,7 +55,7 @@
             <option value="CC">Respuestas Multiples</option>
         </select>
     </div>
-    @elseif($pregunta->tipo_preg=='CC')
+    @elseif($preguntas->tipo_preg=='CC')
     <div class="form-group">
         <label for="tipo_preg" class="form">Tipo de Pregunta</label>
         <select class="form-control" name="tipo_preg" id="tipo_preg" onchange="tipoPreg()">
@@ -128,5 +122,39 @@
 @endsection
 
 @section('scripts')
-<script src="{{asset('js/agregar_pregunta.js')}}"></script>
+<script>window.addEventListener('load',tipoPreg());
+
+function tipoPreg(){
+var select = document.getElementById('tipo_preg');
+var respuesta = document.getElementById('form_respuesta');
+var button = document.getElementById('agregarResp');
+var selected = select.options[select.selectedIndex].value;
+
+if (selected=="A"){
+respuesta.style.display="none";
+button.style.display="none";
+}else {
+respuesta.style.display = "block";
+button.style.display = "inline-block";
+}}
+
+function addResp(){
+var respuestas = document.getElementById('respuestas');
+var childs = document.getElementById('respuestas').childElementCount;
+var text = document.createElement('div');
+text.classList.add('form-group','row');
+text.innerHTML = `<div class="col-sm-12 d-flex">
+<input name=descrip_opcion_`+childs+` id=descrip_opcion_`+childs+` class="form-control mr-3">
+<button type="button" class="btn btn-danger" id=`+childs+` onclick="borrar(this.id)"><i class="fas fa-lg fa-trash-alt"></i></button></div>`
+respuestas.appendChild(text);
+}
+
+
+function borrar(id){
+
+var element = document.getElementById("descrip_opcion_"+id);
+
+element.parentNode.parentNode.remove();
+
+} </script>
 @endsection
