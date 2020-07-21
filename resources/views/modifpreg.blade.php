@@ -48,8 +48,9 @@
 <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" ></script>
 
 <script type="text/javascript"> 
-function format ( d) {
+function format (d) {
    var a1="";
+   var identificador=d.id_pregunta.toString();
                 if (d.tipo_preg === "A") {
                     a1="Abierta";
                 } else if (d.tipo_preg === "CR"){
@@ -60,8 +61,19 @@ function format ( d) {
                 
     return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
                 '<tr>'+
-                '<td>'+'<p>'+d.descrip_opcion+'</p>'+'<td>'+
-                '</tr>'+
+                    '<td>'+'<p>'+identificador+'</p>'+'<td>'+
+                '@foreach($pregunts as $pregunt)'+
+                '@foreach($users as $user)'+
+                '@if(($user->id_pregunta) == $pregunt->id_pregunta)'+
+                    '<td>'+'<p>{{$user->descrip_opcion}}</p>'+'<td>'+
+                        
+                '@endif'+ 
+                '@if(($user->id_pregunta) != $pregunt->id_pregunta)'+
+                        '@break'+
+                '@endif'+        
+                '@endforeach'+
+                '@endforeach'+
+                        '</tr>'+
             '</table>';
     
 }
