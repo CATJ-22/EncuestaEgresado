@@ -103,6 +103,5 @@ class ModifpregController extends Controller
        $id_pregunta = ModPreguntas::find($d);
        $id_pregunta->delete();
         return redirect('/modifpreg')->with('status','Borrando Exitosamente');
-    }*/
-
-}
+    }
+*/
