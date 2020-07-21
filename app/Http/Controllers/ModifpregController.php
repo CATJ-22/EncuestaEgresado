@@ -94,7 +94,7 @@ class ModifpregController extends Controller
         }
 
 
-        return redirect('/editarpreg')->with('status','Actualizado Correctamente!');
+        return redirect('/modifpreg')->with('status','Actualizado Correctamente!');
     }
 
     }  
