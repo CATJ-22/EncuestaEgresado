@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script url="js/app.js" defer></script>
+    <script url="js/bootstrap.min.js"></script>
     @yield('scripts')
     
     <!-- Fonts -->

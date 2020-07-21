@@ -2,6 +2,7 @@
 
 @section('styles')
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
     <style>
     td.details-control {
     background: url('icons/details_open.png') no-repeat center center;
@@ -13,20 +14,20 @@
 @endsection
 
 @section('content')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
 <body>
 <div class="row justify-content-center"> 
   <div class="col=md=8">
       <div class="card">
-          <div class="card-header">Preguntas Existentes</div>
+          <div class="card-header" style="text-align:center;"><H4 >Preguntas de la encuesta de egresados</H4></div>
 
           <div class="container">
               <table class="table" id="dtpreguntas">
                   <thead>
                       <th>ID</th>
                       <th>PREGUNTA</th>
-                      <th>RESPUESTAS</th>
-                      <th Style="width: 120px; text-align: center;" >ACCION</th>
+                      <th>DETALLES</th>
+                      <th Style="text-align: center;" >EDITAR</th>
+                      <th Style="text-align: center;" >BORRAR</th>
                   </thead>
                   <tbody>
 
@@ -60,15 +61,11 @@ function format ( d) {
                 
     return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
                 '<tr>'+
-                '<td>'+'<p>Tipo de Pregunta:'+a1+'</p>'+'<td>'+
+                '<td>'+'<h5>Tipo de Pregunta:</h5><p>'+a1+'</p>'+'<td>'+
                 '</tr>'+
             '</table>';
     
 }
-
-
-
-
 </script>
 
 <script>
@@ -89,7 +86,11 @@ function format ( d) {
                 },
                 {data: 'id_pregunta',
                 render: function(data, t, r, meta) {
-                        return "<a class='btn btn-success' href='/editarpreg/"+data+"'><img src='../icons/papel.svg' style='color: #fff; width: 30px; height: 30px;' alt='Modificar'></a> <button type='button' onClick='return Confirm()' class='btn btn-danger'><img src='../icons/limpiar.svg' style='color: #fff; width: 30px; height: 30px;' alt='Eliminar'></button>";
+                        return "<a class='btn btn-success' href='/editarpreg/"+data+"'><img src='../icons/papel.svg' style='color: #fff; width: 30px; height: 30px;' alt='Modificar'></a>";
+                }},
+                {data: 'id_pregunta',
+                render: function(data, t, r, meta) {
+                        return "<a type='button' class='editor_remove btn btn-danger' href='javascript:;' onclick='dlt("+data+");'><img src='../icons/limpiar.svg' style='color: #fff; width: 30px; height: 30px;' alt='Eliminar'></a>";
                 }},
             ],
             language:{
@@ -112,6 +113,14 @@ function format ( d) {
                 infoFiltered: ""
             }
             
+        });
+
+        $('#dtpreguntas tbody').on('click', 'a.editor_remove', function (e) {
+        e.preventDefault();
+            table
+            .row( $(this).parents('tr'))
+            .remove()
+            .draw();
         });
 
         var detailRows = [];
@@ -148,5 +157,7 @@ function format ( d) {
 
     } );
 </script>
+<script>
 
+</script>
 @endsection
