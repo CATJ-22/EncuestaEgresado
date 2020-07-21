@@ -61,6 +61,7 @@ function format (d) {
                 
     return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
                 '<tr>'+
+<<<<<<< HEAD
                     '<td>'+'<p>'+identificador+'</p>'+'<td>'+
                 '@foreach($pregunts as $pregunt)'+
                 '@foreach($users as $user)'+
@@ -74,6 +75,10 @@ function format (d) {
                 '@endforeach'+
                 '@endforeach'+
                         '</tr>'+
+=======
+                '<td>'+'<p>Tipo de Pregunta:'+a1+'</p>'+'<td>'+
+                '</tr>'+
+>>>>>>> 8819f88edb2811f653296344f29456a3c6a41397
             '</table>';
     
 }

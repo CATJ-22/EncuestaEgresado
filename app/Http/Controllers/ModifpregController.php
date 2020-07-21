@@ -16,7 +16,6 @@ class ModifpregController extends Controller
     /* Metodo para comsultar las preguntas editables */
     public function GetPreguntas(){
         $preguntas = ModPreguntas::WHERE('id_encuesta','=',3)->get();
-        $opciones = DB::select('select id_pregunta, descrip_opcion from opciones');
         $forDtt['data']=$preguntas;
         return response()->json($forDtt);
     }
