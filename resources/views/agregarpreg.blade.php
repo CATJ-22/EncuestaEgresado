@@ -7,7 +7,7 @@
             <div class="card-header">Agregar Pregunta</div>
 
             <div class="container">
-                <form action="/preguntas" method="POST">
+                <form action="/agregarpreg" method="POST">
                     @csrf
                     @if ($errors->any())
                     <div class="alert alert-danger">
@@ -51,7 +51,7 @@
                     </div>
 
                     <div class="form-group d-flex justify-content-between mt-5 mb-5">
-                        <a href="/preguntas" class="btn btn-success">Cancelar</a>
+                        <a href="/agregarpreg" class="btn btn-success">Cancelar</a>
                         <button type="submit" class="btn btn-success">Guardar</button>
                     </div>
                 </form>

@@ -23,6 +23,7 @@ Auth::routes();
 Route::get('/menusecretaria','MenuASController@show');
 Route::get('/encuesta','EncuestaController@show');
 Route::get('/agregarpreg', 'AgregarpregController@show');
+Route::post('/agregarpreg', 'AgregarpregController@store');
 Route::get('/modifpreg','ModifpregController@show');
 Route::get('/estadoencues','EstadoencuesController@show');
 Route::get('allest','EstadoencuesController@GetEstados');
