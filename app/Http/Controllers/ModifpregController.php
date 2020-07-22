@@ -9,9 +9,10 @@ use DB;
 class ModifpregController extends Controller
 {
     public function show(){
-        $users = DB::select('select id_pregunta , descrip_opcion from opciones');
-        $pregunts = ModPreguntas::WHERE('id_encuesta','=',3)->get();
-        return view('modifpreg', ['users'=> $users, 'pregunts'=>$pregunts]);
+        $users = DB::select('call T_resp');
+        /*$pregunts = ModPreguntas::WHERE('id_encuesta','=',3)->get();*/
+        
+        return view('modifpreg', ['users'=> $users]);
     }
     /* Metodo para comsultar las preguntas editables */
     public function GetPreguntas(){
@@ -25,7 +26,7 @@ class ModifpregController extends Controller
         $opciones = ModOpciones::where('id_pregunta', $idpreg)->get();
         return view('editarpreg', array('preguntas'=> $preguntas), array('opciones'=> $opciones));
     }
-
+/* Metodo para Actualizar las preguntas*/
     public function Updatepregunt($idpreg){
         $tipo = request()->tipo_preg;
         $preguntas = request()->validate([
