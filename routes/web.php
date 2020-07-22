@@ -30,7 +30,7 @@ Route::get('allest','EstadoencuesController@GetEstados');
 //vicedecana
 Route::get('/modifpreg','ModifpregController@show');
 Route::get('allpreg','ModifpregController@GetPreguntas');
-//Route::get('delete/{d}','ModifpregController@delete');
+Route::get('/delete/{d}','ModifpregController@delete');
 Route::get('/editarpreg/{idpreg}','ModifpregController@Editarpregunt');
 Route::patch('/editarpreg/{idpreg}','ModifpregController@Updatepregunt');
 

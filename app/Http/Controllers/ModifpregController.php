@@ -93,14 +93,17 @@ class ModifpregController extends Controller
         }
 
 
-        return redirect('/modifpreg')->with('status','Actualizado Correctamente!');
+        return redirect('/editarpreg')->with('status','Actualizado Correctamente!');
     }
 
+        public function delete($d){
+            $id_pregunta->destroy($d);
+            
+            if($id_pregunta = ModPreguntas::find($d) == null){
+                return response()->json(1);
+            }
+            return response()->json(0) ;        
+        }
     }  
 
-    /*public function delete($d){
-       $id_pregunta = ModPreguntas::find($d);
-       $id_pregunta->delete();
-        return redirect('/modifpreg')->with('status','Borrando Exitosamente');
-    }
-*/
+    

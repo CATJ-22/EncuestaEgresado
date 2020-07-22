@@ -10,16 +10,15 @@
     <title>@yield('title')</title>
 
     <!-- Scripts -->
-    <script url="js/app.js" defer></script>
-    <script url="js/bootstrap.min.js"></script>
-    @yield('scripts')
+    <script url="{{ asset('js/app.js') }}" defer></script>
     
+    @yield('scripts')
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link rel ="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">    
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet"> 
     <style>
     .anav{
     color: black;
