@@ -20,8 +20,6 @@ class ModifpregController extends Controller
         return response()->json($forDtt);
     }
 
-    
-
     public function Editarpregunt($idpreg){
         $preguntas = ModPreguntas::find($idpreg);
         $opciones = ModOpciones::where('id_pregunta', $idpreg)->get();

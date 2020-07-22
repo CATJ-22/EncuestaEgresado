@@ -28,8 +28,8 @@
           <div class="container">
               <table class="table" id="dtpreguntas">
                   <thead>
-                      <th width="10px">ID</th>
-                      <th>PREGUNTA</th>
+                      <th width="5px">ID</th>
+                      <th width="700px">PREGUNTA</th>
                       <th Style="text-align: center;">DETALLES</th>
                       <th Style="text-align: center;" >EDITAR</th>
                       <th Style="text-align: center;" >BORRAR</th>
@@ -86,7 +86,7 @@
 <script type="text/javascript"> 
 function format ( d) {
    var a1="";
-                if (d.tipo_preg === "A") {
+                if (d.tipo_preg === "A"){
                     a1="Abierta";
                 } else if (d.tipo_preg === "CR"){
                     a1="Cerrada"; 
@@ -98,8 +98,7 @@ function format ( d) {
                 '<tr>'+
                 '<td>'+'<p><strong>Tipo de Pregunta: </strong>'+a1+'</p>'+'<td>'+
                 '</tr>'+
-            '</table>';
-    
+            '</table>'; 
 }
 </script>
 
@@ -202,7 +201,6 @@ function format ( d) {
             method: 'GET'
         }).then(function(d){
             console.log(d);
-            $('#modalConfirmDelete').modal('hide');
             $('#dtpreguntas').DataTable().ajax.reload();
         });
     }
