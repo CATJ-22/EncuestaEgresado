@@ -2,7 +2,8 @@
 
 @section('styles')
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <style>
     td.details-control {
     background: url('icons/details_open.png') no-repeat center center;
@@ -10,11 +11,15 @@
     }
     tr.details td.details-control {
     background: url('icons/details_close.png') no-repeat center center;
-    }</style>
+    }
+    .modal-dialog.modal-notify.modal-danger .modal-header {
+    background-color: #ff3547;
+}</style>
 @endsection
 
 @section('content')
-<body>
+<div class="container">
+
 <div class="row justify-content-center"> 
   <div class="col=md=8">
       <div class="card">
@@ -23,9 +28,9 @@
           <div class="container">
               <table class="table" id="dtpreguntas">
                   <thead>
-                      <th>ID</th>
+                      <th width="10px">ID</th>
                       <th>PREGUNTA</th>
-                      <th>DETALLES</th>
+                      <th Style="text-align: center;">DETALLES</th>
                       <th Style="text-align: center;" >EDITAR</th>
                       <th Style="text-align: center;" >BORRAR</th>
                   </thead>
@@ -37,8 +42,37 @@
       </div>
   </div>
 </div>
-</body>
 
+<!--Modal: modalConfirmDelete-->
+<div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm modal-notify modal-danger" role="document">
+    <!--Content-->
+    <div class="modal-content text-center">
+      <!--Header-->
+      <div class="modal-header d-flex justify-content-center">
+        <p class="heading"><h4 style="color: #ffff">Ventana de Confirmacion</h4></p>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <input type="hidden" id="idpreg">
+        <p><strong>Una vez borrada la informacion, no podra recuperarse; Desea continuar?</strong></p>
+
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer flex-center justify-content-center">
+        <a type="button" class="btn btn-danger waves-effect" data-dismiss="modal"><strong>No</strong></a>
+        <button  id="btneliminar" onClick="eliminaryes(idpreg)" class="btn  btn-outline-danger" ><strong>Sí</strong></button>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!--Modal: modalConfirmDelete-->
+
+</div>
 @endsection
 
 @section('scripts')
@@ -47,7 +81,8 @@
   integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
   crossorigin="anonymous"></script>
 <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" ></script>
-
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script type="text/javascript"> 
 function format ( d) {
    var a1="";
@@ -61,7 +96,7 @@ function format ( d) {
                 
     return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
                 '<tr>'+
-                '<td>'+'<h5>Tipo de Pregunta:</h5><p>'+a1+'</p>'+'<td>'+
+                '<td>'+'<p><strong>Tipo de Pregunta: </strong>'+a1+'</p>'+'<td>'+
                 '</tr>'+
             '</table>';
     
@@ -70,6 +105,8 @@ function format ( d) {
 
 <script>
     $(document).ready( function () {
+        eliminaryes();
+
         var dt = $('#dtpreguntas').DataTable({
             ajax:{
                 url: 'allpreg',
@@ -86,13 +123,14 @@ function format ( d) {
                 },
                 {data: 'id_pregunta',
                 render: function(data, t, r, meta) {
-                        return "<a class='btn btn-success' href='/editarpreg/"+data+"'><img src='../icons/papel.svg' style='color: #fff; width: 30px; height: 30px;' alt='Modificar'></a>";
+                        return "<div class='col' Style='text-align: center;'><a class='btn btn-success' href='/editarpreg/"+data+"'><img src='../icons/papel.svg' style='color: #fff; width: 30px; height: 30px;' alt='Modificar'></a></div>";
                 }},
                 {data: 'id_pregunta',
                 render: function(data, t, r, meta) {
-                        return "<a type='button' class='editor_remove btn btn-danger' href='javascript:;' onclick='dlt("+data+");'><img src='../icons/limpiar.svg' style='color: #fff; width: 30px; height: 30px;' alt='Eliminar'></a>";
+                        return "<div class='col' Style='text-align: center;'><button type='button' class='editor_remove btn btn-danger' onclick='modalcmf("+data+")'><img src='../icons/limpiar.svg' style='color: #fff; width: 30px; height: 30px;' alt='Eliminar'></button></div>";
                 }},
             ],
+            fixedColumns: true,
             language:{
                 info: "_TOTAL_ registros",
                 search: "Buscar",
@@ -115,13 +153,6 @@ function format ( d) {
             
         });
 
-        $('#dtpreguntas tbody').on('click', 'a.editor_remove', function (e) {
-        e.preventDefault();
-            table
-            .row( $(this).parents('tr'))
-            .remove()
-            .draw();
-        });
 
         var detailRows = [];
     
@@ -156,8 +187,24 @@ function format ( d) {
     } );    
 
     } );
-</script>
-<script>
 
+    function modalcmf(idpre){
+        $('#idpreg').val(idpre);
+        $('#modalConfirmDelete').modal({
+        keyboard: false,
+        backdrop: 'static'});
+    }
+    function eliminaryes() {
+        $('#btneliminar').on('click', function() {
+            e.preventDefault();
+        });
+        fetch('/delete/'+$('#idpreg').val(),{
+            method: 'GET'
+        }).then(function(d){
+            console.log(d);
+            $('#modalConfirmDelete').modal('hide');
+            $('#dtpreguntas').DataTable().ajax.reload();
+        });
+    }
 </script>
 @endsection
