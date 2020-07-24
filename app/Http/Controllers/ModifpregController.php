@@ -9,14 +9,31 @@ use DB;
 class ModifpregController extends Controller
 {
     public function show(){
-        $users = DB::select('call T_resp');
-        /*$pregunts = ModPreguntas::WHERE('id_encuesta','=',3)->get();*/
-        
-        return view('modifpreg', ['users'=> $users]);
+        return view('modifpreg');
     }
     /* Metodo para comsultar las preguntas editables */
     public function GetPreguntas(){
         $preguntas = ModPreguntas::WHERE('id_encuesta','=',3)->get();
+        $opcion = DB::select('call T_resp');
+        $opciones = DB::select('select * from opciones');
+        foreach ($preguntas as $keyp => $valuep) {
+            foreach ($opcion as $keyo => $valueo) {
+                if ($valuep->id_pregunta == $valueo->id_pregunta) {
+                    $valuep->details = $valueo->Total;
+                }
+            }
+        }
+        $a='';
+        foreach ($preguntas as $keyp => $valuep) {
+            foreach ($opciones as $keyo => $valueo) {
+                if ($valuep->id_pregunta == $valueo->id_pregunta) {
+                     $a.=$valueo->descrip_opcion."<br>";
+                }
+            }
+            $valuep->pregunta = $a;
+            $a="";
+        }
+
         $forDtt['data']=$preguntas;
         return response()->json($forDtt);
     }

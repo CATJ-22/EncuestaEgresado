@@ -98,6 +98,12 @@ function format ( d) {
                 '<tr>'+
                 '<td>'+'<p><strong>Tipo de Pregunta: </strong>'+a1+'</p>'+'<td>'+
                 '</tr>'+
+                '<tr>'+
+                '<td>'+'<p><strong>Cantidad de Respuestas: </strong>'+d.details+'</p>'+'<td>'+
+                '</tr>'+
+                '<tr>'+
+                '<td>'+'<p><strong>Respuestas: <br></strong>'+d.pregunta+'</p>'+'<td>'+
+                '</tr>'+
             '</table>'; 
 }
 </script>
